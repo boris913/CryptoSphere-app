@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <title>CryptoSphere | BaudouinDev</title>
+</head>
+
+<body>
+
+    <div class="overlay">
+        <button id="closeMenu"><i class="ri-close-circle-line"></i></button>
+
+        <div class="nav-links">
+            <a href="/index.html">Accueil</a>
+            <a href="/pages/charts.html">Graphiques</a>
+            <a href="/pages/search.html">Recherche</a>
+            <a href="/pages/about.html">À Propos de Nous</a>
+        </div>
+
+        <div class="social-icons">
+            <a href="https://wa.me/681711540" target="_blank"><i class="ri-whatsapp-line"></i></a>
+            <a href="https://Github.com/boris913" target="_blank"><i class="ri-github-line"></i></a>
+            <a href="https://x.com/mysofcb" target="_blank"><i class="ri-twitter-line"></i></a>
+        </div>
+
+    </div>
+
+    <div class="main">
+
+        <div class="global">
+            <p>Pièces : <b id="coins-count">N/A</b></p>
+            <p>Échanges : <b id="exchanges-count">N/A</b></p>
+            <p>Capitalisation boursière : <span><b id="marketCap">N/A</b> <span id="marketCapChange">N/A <i
+                            class="ri-arrow-down-s-fill"></i></span></span></p>
+            <p>Volume 24H : <b id="volume">N/A</b></p>
+            <p>Dominance : <b id="dominance">BTC N/A% - ETH N/A%</b></p>
+        </div>
+
+        <nav>
+            <div class="left-section">
+                <button id="openMenu"><i class="ri-menu-line"></i></button>
+                <a href="/index.html" class="logo">CryptoSphere.</a>
+                <div class="nav-links">
+                    <a href="/index.html">Accueil</a>
+                    <a href="/pages/charts.html">Graphiques</a>
+                    <a href="/pages/search.html">Recherche</a>
+                    <a href="/pages/about.html">À Propos de Nous</a>
+                </div>
+            </div>
+            <div class="right-section">
+                <form class="search" id="searchForm">
+                    <i class="ri-search-line"></i>
+                    <input type="text" id="searchInput" placeholder="Rechercher un actif..." required
+                        autocomplete="off">
+                </form>
+                <i id="theme-toggle" class="ri-sun-line"></i>
+            </div>
+        </nav>
+
+        <div class="coin-container">
+            <div class="left-section">
+                <div class="ticker">
+                    <div class="tradingview-widget-container" id="ticker-widget"></div>
+                </div>
+                <h3>Statistiques</h3>
+                <div class="coin-info"></div>
+            </div>
+
+            <div class="main-section">
+                <div class="mini-chart">
+                    <div class="tradingview-widget-container" id="mini-chart-widget"></div>
+                </div>
+            </div>
+
+            <div class="right-section"></div>
+
+        </div>
+
+        <div class="coin-desc">
+            <h3>À propos de l'Actif</h3>
+            <p id="coin-desc-p">
+                Le Bitcoin est la première monnaie internet réussie basée sur la technologie peer-to-peer ; 
+                aucune banque centrale ou autorité n'est impliquée dans la transaction et la production de la monnaie Bitcoin. 
+                Il a été créé par un individu/groupe anonyme sous le nom de Satoshi Nakamoto. Le code source est disponible 
+                publiquement en tant que projet open source, tout le monde peut le consulter et participer au processus de développement.
+
+                Le Bitcoin change notre vision de l'argent au fur et à mesure. L'idée était de produire un moyen d'échange, 
+                indépendant de toute autorité centrale, qui pourrait être transféré électroniquement de manière sécurisée, 
+                vérifiable et immuable. C'est une monnaie internet décentralisée peer-to-peer facilitant les paiements mobiles, 
+                avec des frais de transaction très bas, protégeant votre identité, et fonctionnant partout tout le temps sans 
+                autorité centrale ni banques.
+
+                Le Bitcoin est conçu pour avoir seulement 21 millions de BTC jamais créés, ce qui en fait une monnaie déflationniste. 
+                Le Bitcoin utilise l'algorithme de hachage <a href="https://www.coingecko.com/fr?hashing_algorithm=SHA-256">
+                SHA-256</a> avec un temps moyen de confirmation de transaction de 10 minutes. Aujourd'hui, les mineurs minent 
+                le Bitcoin en utilisant des puces ASIC dédiées uniquement au minage du Bitcoin, et le taux de hachage a atteint les péta-hashes.
+
+                Étant la première monnaie cryptographique en ligne réussie, le Bitcoin a inspiré d'autres monnaies alternatives 
+                telles que <a href="https://www.coingecko.com/fr/coins/litecoin">Litecoin</a>, <a href="https://www.coingecko.com/fr/coins/peercoin">
+                Peercoin</a>, <a href="https://www.coingecko.com/fr/coins/primecoin">Primecoin</a>, et ainsi de suite.
+
+                La cryptomonnaie a ensuite décollé avec l'innovation du contrat intelligent turing-complet par <a href="https://www.coingecko.com/fr/coins/ethereum">
+                Ethereum</a> qui a conduit au développement d'autres projets étonnants tels que <a href="https://www.coingecko.com/fr/coins/eos">
+                EOS</a>, <a href="https://www.coingecko.com/fr/coins/tron">Tron</a>, et même des crypto-collectibles comme <a href="https://www.coingecko.com/buzz/ethereum-still-king-dapps-cryptokitties-need-1-billion-on-eos">
+                CryptoKitties</a>.
+            </p>
+            <div class="error-message" id="coin-info-error">Limite d'API atteinte. Veuillez réessayer plus tard.</div>
+        </div>
+
+
+    </div>
+
+    <footer>
+        <p>BaudouinDev, Tous droits réservés.</p>
+        <div class="social-icons">
+            <a href="https://wa.me/681711540" target="_blank"><i class="ri-whatsapp-line"></i></a>
+            <a href="https://Github.com/boris913" target="_blank"><i class="ri-github-line"></i></a>
+            <a href="https://x.com/mysofcb" target="_blank"><i class="ri-twitter-line"></i></a>
+        </div>
+    </footer>
+
+    <button onclick="scrollToTop()" id="scrollTop"><i class="ri-arrow-up-s-line"></i></button>
+
+
+    <script src="../assets/js/global.js"></script>
+    <script src="../assets/js/coin.js"></script>
+</body>
+
+</html>
